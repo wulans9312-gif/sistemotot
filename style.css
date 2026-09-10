@@ -4,14 +4,14 @@
     --secondary-green: #52b788;
     --accent-yellow: #f4d35e;
     --soft-yellow: #fff9db;
-    --card-bg: rgba(255, 255, 255, 0.92);
+    --card-bg: rgba(255, 255, 255, 0.95);
     --text-dark: #1b4332;
     --text-muted: #408364;
     --border-soft: #d8f3dc;
     --shadow-sm: 0 4px 15px rgba(45, 106, 79, 0.05);
     --shadow-md: 0 8px 30px rgba(45, 106, 79, 0.1);
     --shadow-lg: 0 15px 35px rgba(45, 106, 79, 0.15);
-    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
@@ -19,6 +19,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -63,25 +67,12 @@ body {
     background: linear-gradient(90deg, var(--secondary-green), var(--accent-yellow));
 }
 
-@keyframes fontSlideDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-40px) scale(0.95);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
 .animated-heading {
     font-family: 'Poppins', sans-serif;
     font-size: 2.8rem;
     font-weight: 800;
     color: var(--primary-green);
     margin-bottom: 15px;
-    animation: fontSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .sub-heading {
@@ -90,7 +81,6 @@ body {
     font-weight: 600;
     color: var(--text-muted);
     margin-bottom: 25px;
-    animation: fontSlideDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .badge-group {
@@ -235,8 +225,6 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
-    position: relative;
-    overflow: hidden;
 }
 
 .nav-card:hover {
@@ -358,34 +346,22 @@ body {
     line-height: 1.6;
 }
 
-/* --- DISPLAY MATERIAL CONTAINER --- */
+/* --- DISPLAY MATERIAL CONTAINER (TAMPIL MODEL LONG SCROLL) --- */
 .content-display-area {
-    min-height: 200px;
-    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 50px;
 }
 
 .content-panel {
-    display: none;
+    display: block; /* TAMPIL SEMUA KE BAWAH */
     background: var(--card-bg);
     border-radius: 28px;
     padding: 40px;
     border: 2px solid #ffffff;
     box-shadow: var(--shadow-lg);
-    position: relative;
-    transform: scale(0.92);
-    opacity: 0;
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.content-panel.active-panel {
-    display: block;
-    transform: scale(1);
-    opacity: 1;
-}
-
-.content-panel.closing-panel {
-    transform: scale(0.92);
-    opacity: 0;
+    scroll-margin-top: 30px;
 }
 
 .panel-heading {
@@ -394,7 +370,6 @@ body {
     font-weight: 700;
     color: var(--primary-green);
     margin-bottom: 20px;
-    animation: fontSlideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     border-bottom: 3px solid var(--border-soft);
     padding-bottom: 12px;
 }
@@ -410,10 +385,6 @@ body {
 }
 
 /* INTERAKTIF & CARDS */
-.interactive-section {
-    margin-top: 30px;
-}
-
 .btn-group-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -435,7 +406,7 @@ body {
     box-shadow: var(--shadow-sm);
 }
 
-.sub-btn:hover, .sub-btn.active {
+.sub-btn:hover {
     background: var(--primary-green);
     color: #ffffff;
     border-color: var(--primary-green);
@@ -471,15 +442,11 @@ body {
     transition: var(--transition-smooth);
 }
 
-.arrow-btn:hover, .arrow-btn.active {
+.arrow-btn:hover {
     background: var(--accent-yellow);
     color: #4a3b00;
     border-color: #e0b828;
     padding-left: 32px;
-}
-
-.arrow-btn.active::after {
-    transform: rotate(90deg);
 }
 
 .sub-content-detail {
@@ -490,7 +457,6 @@ body {
     box-shadow: var(--shadow-sm);
     margin-top: 20px;
     display: none;
-    animation: fontSlideDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .sub-content-detail.active {
@@ -607,7 +573,6 @@ body {
 
 .accordion-content.active {
     display: block;
-    animation: fontSlideDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @media (max-width: 768px) {
