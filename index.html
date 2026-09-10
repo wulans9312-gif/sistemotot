@@ -55,50 +55,50 @@
     <section id="peta-section" class="peta-section">
         <div class="peta-header">
             <h2 class="sub-heading" style="color: var(--primary-green); font-size: 1.8rem; margin-bottom: 5px;">PETA PEMBELAJARAN</h2>
-            <p style="color: var(--text-muted); font-weight: 600;">Klik kolom di bawah untuk membuka materi secara bertahap</p>
+            <p style="color: var(--text-muted); font-weight: 600;">Klik tombol di bawah untuk langsung menuju bagian materi</p>
         </div>
 
         <div class="peta-grid">
-            <div class="nav-card" onclick="switchPanel(1)">
+            <div class="nav-card" onclick="scrollToPanel(1)">
                 <div class="nav-icon">🦴</div>
                 <div class="nav-text">Anatomi Makroskopis Otot Rangka</div>
             </div>
-            <div class="nav-card" onclick="switchPanel(2)">
+            <div class="nav-card" onclick="scrollToPanel(2)">
                 <div class="nav-icon">🔬</div>
                 <div class="nav-text">Struktur Mikroskopis Serat Otot</div>
             </div>
-            <div class="nav-card" onclick="switchPanel(3)">
+            <div class="nav-card" onclick="scrollToPanel(3)">
                 <div class="nav-icon">🧬</div>
                 <div class="nav-text">Struktur Molekul Sarkomer</div>
             </div>
-            <div class="nav-card" onclick="switchPanel(4)">
+            <div class="nav-card" onclick="scrollToPanel(4)">
                 <div class="nav-icon">⚡</div>
                 <div class="nav-text">Tautan Neuromuscular & Asetilkolin</div>
             </div>
-            <div class="nav-card" onclick="switchPanel(5)">
+            <div class="nav-card" onclick="scrollToPanel(5)">
                 <div class="nav-icon">🔄</div>
                 <div class="nav-text">Sliding Filament Theory</div>
             </div>
-            <div class="nav-card" onclick="switchPanel(6)">
+            <div class="nav-card" onclick="scrollToPanel(6)">
                 <div class="nav-icon">🧪</div>
                 <div class="nav-text">Relaksasi Otot & Pompa Kalsium</div>
             </div>
-            <div class="nav-card" onclick="switchPanel(7)">
+            <div class="nav-card" onclick="scrollToPanel(7)">
                 <div class="nav-icon">⚡</div>
                 <div class="nav-text">Sumber Energi Kontraksi</div>
             </div>
-            <div class="nav-card" onclick="switchPanel(8)">
+            <div class="nav-card" onclick="scrollToPanel(8)">
                 <div class="nav-icon">📈</div>
                 <div class="nav-text">Kedutan, Sumasi, Tetanus & Kelelahan</div>
             </div>
-            <div class="nav-card" onclick="switchPanel(9)">
+            <div class="nav-card" onclick="scrollToPanel(9)">
                 <div class="nav-icon">🏥</div>
                 <div class="nav-text">Kelainan Sistem Otot</div>
             </div>
         </div>
     </section>
 
-    <!-- DISPLAY AREA UTAMA MATERI -->
+    <!-- DISPLAY AREA UTAMA MATERI (TAMPIL SEMUA / DIBACA DENGAN GULIR) -->
     <main class="content-display-area">
 
         <!-- PANEL 1: ANATOMI MAKROSKOPIS OTOT RANGKA -->
@@ -194,7 +194,6 @@
                 </div>
             </div>
 
-            <!-- CIRI HISTOLOGIS -->
             <div style="margin-top: 35px; background: #ffffff; padding: 25px; border-radius: 20px; border: 2px solid var(--border-soft);">
                 <h3 class="detail-title">📋 Ringkasan Ciri Histologis Otot Rangka</h3>
                 <table class="styled-table">
@@ -267,7 +266,7 @@
                 <div class="media-box"><img src="images/gambar_2_9.jpg" alt="Anatomi Sarkomer"><div class="img-caption">Gambar 2.9 Anatomi Serat Otot & Sarkomer</div></div>
             </div>
 
-            <div class="arrow-card-grid">
+            <div class="arrow-card-grid" style="margin-top: 20px;">
                 <button class="arrow-btn" onclick="toggleSubContent('p3-miosin')">1. Filamen Tebal Miosin</button>
                 <button class="arrow-btn" onclick="toggleSubContent('p3-aktin')">2. Filamen Tipis Aktin</button>
                 <button class="arrow-btn" onclick="toggleSubContent('p3-titin')">3. Filamen Elastis Titin</button>
@@ -495,13 +494,13 @@
 
     </main>
 
-    <!-- FOOTER: SIMPULAN & SARAN -->
+    <!-- FOOTER: SIMPULAN & SARAN (TANPA TULISAN BAB III) -->
     <footer class="footer-card">
         <button class="accordion-btn" onclick="toggleAccordion('acc-penutup')">
-            <span>📌 BAB III: PENUTUP (Simpulan & Saran)</span>
+            <span>📌 PENUTUP (Simpulan & Saran)</span>
             <span>▼</span>
         </button>
-        <div id="acc-penutup" class="accordion-content">
+        <div id="acc-penutup" class="accordion-content active">
             <h3 style="color: var(--primary-green); margin-bottom: 10px;">A. Simpulan</h3>
             <p style="margin-bottom: 15px;">Sistem muskular merupakan bagian penting dalam tubuh manusia yang berperan dalam menghasilkan gerakan, mempertahankan postur, menstabilkan tubuh, dan mendukung berbagai aktivitas fungsional. Otot rangka sebagai alat gerak aktif memiliki struktur terorganisasi dari tingkat makroskopis (epimisium, perimisium, endomisium, tendon) hingga molekuler (aktin, miosin, sarkomer). Kontraksi berlangsung melalui mekanisme <i>sliding filament</i> yang dipicu oleh pelepasan Asetilkolin di NMJ dan regulasi ion Ca²⁺ serta ATP.</p>
             
